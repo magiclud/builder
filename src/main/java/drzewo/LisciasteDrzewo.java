@@ -27,4 +27,11 @@ public class LisciasteDrzewo implements DrzewoBuilder {
 		return drzewo;
 	}
 
+	@Override
+	public void buildNazwa() {
+		System.out.println("ustawiam nazwe");
+		drzewo.setNazwa("Sosna");
+
+	}
+
 }
