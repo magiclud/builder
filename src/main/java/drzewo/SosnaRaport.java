@@ -13,17 +13,17 @@ public class SosnaRaport implements RaportDrzewoBuildier {
 	}
 
 	@Override
-	public RaportDrzewo getOpis(String nazwa) {
+	public RaportDrzewo getOpis() {
 		return new RaportDrzewo(nazwa);
 	}
 
 	@Override
-	public RaportDrzewo getOpis(String nazwa, int wysokosc) {
+	public RaportDrzewo getOpis1() {
 		return new RaportDrzewo(nazwa, wysokosc);
 	}
 
 	@Override
-	public RaportDrzewo getOpis(String nazwa, int wysokosc, int wiek) {
+	public RaportDrzewo getOpis2() {
 		// TODO Auto-generated method stub
 		return new RaportDrzewo(nazwa, wysokosc, wiek);
 	}

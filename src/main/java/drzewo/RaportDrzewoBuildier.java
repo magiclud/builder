@@ -2,10 +2,10 @@ package drzewo;
 
 public interface RaportDrzewoBuildier {
 
-	public RaportDrzewo getOpis(String nazwa);
+	public RaportDrzewo getOpis();
 
-	public RaportDrzewo getOpis(String nazwa, int wysokosc);
+	public RaportDrzewo getOpis1();
 
-	public RaportDrzewo getOpis(String nazwa, int wysokosc, int wiek);
+	public RaportDrzewo getOpis2();
 
 }
