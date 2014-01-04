@@ -3,14 +3,20 @@ package drzewo;
 public class SosnaRaport implements RaportDrzewoBuildier {
 
 	String nazwa;
-	Drzewo drzewo;
+	int wysokosc;
+	int wiek;
 
 	public SosnaRaport(Drzewo drzewo, String nazwa) {
 		this.nazwa = nazwa;
+		wysokosc = drzewo.getWysokosc();
+		wiek = drzewo.getWiek();
 	}
 
 	public RaportDrzewo getOpis() {
-		return new RaportDrzewo(drzewo, nazwa);
+		// inne opcje
+		// retiurn new RportDrzewo(nazwa);
+		// return new ReportDrzewo(nazwa, wysokosc);
+		return new RaportDrzewo(nazwa, wysokosc, wiek);
 	}
 
 

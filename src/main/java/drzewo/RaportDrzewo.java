@@ -1,36 +1,42 @@
 package drzewo;
 
-public class RaportDrzewo implements DrzewoBuilder {
+public class RaportDrzewo {
 
-	Drzewo drzewo;
-	int wiek;
-	int wysokosc;
-	String nazwa;
+	// Drzewo drzewo;
+	// int wiek;
+	// int wysokosc;
 
-	RaportDrzewo(Drzewo drzewo, String nazwa) {
-		this.drzewo = drzewo;
-		wiek = drzewo.getWiek();
-		wysokosc = drzewo.getWysokosc();
-		this.nazwa = nazwa;
-		System.out.println(nazwa + " wiek " + drzewo.getWiek() + " wysokosc " + drzewo.getWysokosc());
+	RaportDrzewo(String nazwa){
 	}
 
-	@Override
-	public void buildWiek() {
-		drzewo.setWiek(wiek);
+	RaportDrzewo(String nazwa, int wysokosc) {
 
 	}
 
-	@Override
-	public void buildWysokosc() {
-		drzewo.setWysokosc(wysokosc);
-
+	RaportDrzewo(String nazwa, int wysokosc, int wiek ) {
+		// this.drzewo = drzewo;
+		// wiek = drzewo.getWiek();
+		// wysokosc = drzewo.getWysokosc();
+	
+		System.out.println(nazwa + " wiek " + wiek + " wysokosc " + wysokosc);
 	}
 
-	@Override
-	public Drzewo getDrzewo() {
-		// TODO Auto-generated method stub
-		return drzewo;
-	}
+	// @Override
+	// public void buildWiek() {
+	// drzewo.setWiek(wiek);
+	//
+	// }
+	//
+	// @Override
+	// public void buildWysokosc() {
+	// drzewo.setWysokosc(wysokosc);
+	//
+	// }
+	//
+	// @Override
+	// public Drzewo getDrzewo() {
+	// // TODO Auto-generated method stub
+	// return drzewo;
+	// }
 
 }
