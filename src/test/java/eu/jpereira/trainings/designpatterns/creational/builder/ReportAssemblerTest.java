@@ -16,11 +16,14 @@
 package eu.jpereira.trainings.designpatterns.creational.builder;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+import eu.jpereira.trainings.designpatterns.creational.builder.json.JSONReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.Customer;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.Report;
+import eu.jpereira.trainings.designpatterns.creational.builder.model.ReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SaleEntry;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
 
@@ -29,6 +32,13 @@ import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
  * 
  */
 public class ReportAssemblerTest {
+	@Test
+	public void testWyowalaniaReportBody() {
+		JSONReportBody report = new JSONReportBody();
+		ReportBody reportBody = (ReportBody) report.getAsString();
+		ReportAssembler assembler = new ReportAssembler(reportBody);
+		assertNotNull(assembler);
+	}
 
 	@Test
 	public void testAssembleJSONReportBody() {

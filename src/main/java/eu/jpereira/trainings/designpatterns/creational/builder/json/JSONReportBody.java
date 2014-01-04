@@ -15,6 +15,7 @@
  */
 package eu.jpereira.trainings.designpatterns.creational.builder.json;
 
+import eu.jpereira.trainings.designpatterns.creational.builder.model.Report;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.ReportBody;
 
 /**
@@ -23,6 +24,12 @@ import eu.jpereira.trainings.designpatterns.creational.builder.model.ReportBody;
  *
  */
 public class JSONReportBody implements ReportBody{
+
+	private Report report;
+
+	public JSONReportBody() {
+		report = new Report();
+	}
 
 	private StringBuilder stringBuilder = new StringBuilder();
 	/* (non-Javadoc)
