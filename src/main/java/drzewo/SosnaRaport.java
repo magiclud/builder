@@ -12,10 +12,19 @@ public class SosnaRaport implements RaportDrzewoBuildier {
 		wiek = drzewo.getWiek();
 	}
 
-	public RaportDrzewo getOpis() {
-		// inne opcje
-		// retiurn new RportDrzewo(nazwa);
-		// return new ReportDrzewo(nazwa, wysokosc);
+	@Override
+	public RaportDrzewo getOpis(String nazwa) {
+		return new RaportDrzewo(nazwa);
+	}
+
+	@Override
+	public RaportDrzewo getOpis(String nazwa, int wysokosc) {
+		return new RaportDrzewo(nazwa, wysokosc);
+	}
+
+	@Override
+	public RaportDrzewo getOpis(String nazwa, int wysokosc, int wiek) {
+		// TODO Auto-generated method stub
 		return new RaportDrzewo(nazwa, wysokosc, wiek);
 	}
 
