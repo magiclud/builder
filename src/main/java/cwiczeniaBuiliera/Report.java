@@ -24,6 +24,9 @@ public class Report {
 
 	private ReportBody reportBody;
 
+	Report(ReportBody reportBody) {
+		this.reportBody = reportBody;
+	}
 	/**
 	 * @param reportBody
 	 */

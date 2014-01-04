@@ -27,7 +27,7 @@ public class JSONReportBody implements ReportBody {
 	private ReportBody reportBody;
 
 	public JSONReportBody() {
-		report = new Report();
+		report = new Report(reportBody);
 	}
 
 	private StringBuilder stringBuilder = new StringBuilder();
