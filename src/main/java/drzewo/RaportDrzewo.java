@@ -1,17 +1,11 @@
 package drzewo;
 
-public class RaportDrzewo implements RaportDrzewoBuildier {
+public class RaportDrzewo {
 
-	private Drzewo drzewo;
+	private int nazwa;
 
-	RaportDrzewo(Drzewo drzewo) {
-		this.drzewo = drzewo;
-
+	RaportDrzewo(Drzewo drzewo, String nazwa) {
+		// System.out.println(nazwa+" wiek "+
 	}
-
-	public String getOpis() {
-		return drzewo.getSzczegoly();
-	}
-
 
 }

@@ -7,8 +7,6 @@ public interface DrzewoBuilder {
 
 	public void buildWysokosc();
 
-	public void buildNazwa();
-
 	public Drzewo getDrzewo();
 
 }

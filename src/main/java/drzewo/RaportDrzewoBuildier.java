@@ -2,6 +2,6 @@ package drzewo;
 
 public interface RaportDrzewoBuildier {
 
-	public String getOpis();
+	public RaportDrzewo getOpis();
 
 }

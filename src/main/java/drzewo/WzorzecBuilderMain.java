@@ -12,7 +12,6 @@ public class WzorzecBuilderMain {
 	public void stworzDrzewo() {
 		this.drzewo.buildWiek();
 		this.drzewo.buildWysokosc();
-		this.drzewo.buildNazwa();
 	}
 
 	public Drzewo wezDrzewo() {
@@ -24,7 +23,7 @@ public class WzorzecBuilderMain {
 		WzorzecBuilderMain utworzDrrzewo = new WzorzecBuilderMain(lisciasteDrzewo);
 		utworzDrrzewo.stworzDrzewo();
 		Drzewo pobierzDrzewo = utworzDrrzewo.wezDrzewo();
-		RaportDrzewoBuildier raport = new RaportDrzewo(pobierzDrzewo);
+		// RaportDrzewoBuildier raport = new RaportDrzewo(pobierzDrzewo);
 
 	}
 }
