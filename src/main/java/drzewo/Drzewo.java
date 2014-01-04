@@ -5,6 +5,14 @@ public class Drzewo {
 	private int wiek;
 	private int wysokosc;
 
+	public int getWiek() {
+		return wiek;
+	}
+
+	public int getWysokosc() {
+		return wysokosc;
+	}
+
 	public void setWiek(int wiek) {
 		this.wiek = wiek;
 	}
