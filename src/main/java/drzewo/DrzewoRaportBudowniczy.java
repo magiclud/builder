@@ -1,6 +1,6 @@
 package drzewo;
 
-public interface SosnaRaportBudowniczy {
+public interface DrzewoRaportBudowniczy {
 
 	public void buildWiek();
 

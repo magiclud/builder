@@ -1,6 +1,6 @@
 package drzewo;
 
-public class SosnaRaport implements SosnaRaportBudowniczy {
+public class SosnaRaportBudwoniczy implements DrzewoRaportBudowniczy {
 
 	String nazwa = "Sosna";
 	int wysokosc;
@@ -8,7 +8,7 @@ public class SosnaRaport implements SosnaRaportBudowniczy {
 	Drzewo drzewo = new Drzewo();;
 	RaportDrzewo raport;
 	
-	public SosnaRaport(Drzewo drzewo) {
+	public SosnaRaportBudwoniczy(Drzewo drzewo) {
 		
 		wiek = drzewo.getWiek();
 		wysokosc = drzewo.getWysokosc();

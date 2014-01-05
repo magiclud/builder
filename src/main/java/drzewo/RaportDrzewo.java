@@ -28,7 +28,7 @@ public class RaportDrzewo {
 			return nazwa;
 		}
 		if (wiek <= 0) {
-			return nazwa + " wysoksoc " + wysokosc;
+			return nazwa + " wysokosc " + wysokosc;
 		}
 		if (wysokosc <= 0) {
 			return nazwa + " wiek " + wiek;
