@@ -1,6 +1,6 @@
 package drzewo;
 
-public class SosnaRaport  {
+public class SosnaRaport implements SosnaRaportBudowniczy {
 
 	String nazwa = "Sosna";
 	int wysokosc;
@@ -11,22 +11,24 @@ public class SosnaRaport  {
 	public SosnaRaport(Drzewo drzewo) {
 		
 		wiek = drzewo.getWiek();
+		wysokosc = drzewo.getWysokosc();
 	}
 
-	
-	public void buildWiek(int wiek) {
+	@Override
+	public RaportDrzewo getRaport(){
+		return new RaportDrzewo(drzewo, nazwa);
+	}
+
+	@Override
+	public void buildWiek() {
 		drzewo.setWiek(wiek);
 
 	}
 
-	public Drzewo getDrzewo() {
-		// TODO Auto-generated method stub
-		return drzewo;
-	}
+	@Override
+	public void buildWysokosc() {
+		drzewo.setWysokosc(wysokosc);
 
-	public RaportDrzewo getRaport(){
-		raport = new RaportDrzewo(nazwa, drzewo);
-		return raport.getOpis();
 	}
 
 };
