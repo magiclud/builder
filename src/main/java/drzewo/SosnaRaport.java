@@ -16,7 +16,7 @@ public class SosnaRaport implements SosnaRaportBudowniczy {
 
 	@Override
 	public RaportDrzewo getRaport(){
-		return new RaportDrzewo(drzewo, nazwa);
+		return new RaportDrzewo(wiek, wysokosc, nazwa);
 	}
 
 	@Override
