@@ -34,15 +34,21 @@ public class ReportAssembler {
 
 	private ReportBody reportBody;
 
+	Report report;// = assembler.getReport("JSON");
 	public ReportAssembler() {
+		reportBody = new JSONReportBody();
 	}
 
 	public ReportAssembler(ReportBody reportBody) {
 		this.reportBody = reportBody;
 	}
 
-	public Object getReport2() {
+	public Object getReport() {
 		return this.reportBody.getAsString();
+	}
+
+	public void setContents() {
+		report.getAsString();
 	}
 	/**
 	 * @param reportDate

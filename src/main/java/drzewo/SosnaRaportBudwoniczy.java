@@ -3,8 +3,7 @@ package drzewo;
 public class SosnaRaportBudwoniczy implements DrzewoRaportBudowniczy {
 
 	String nazwa = "Sosna";
-	Drzewo drzewo = new Drzewo();;
-	RaportDrzewo raport;
+	Drzewo drzewo = new Drzewo();
 	
 
 	@Override
