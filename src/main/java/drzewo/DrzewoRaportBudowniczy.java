@@ -2,9 +2,9 @@ package drzewo;
 
 public interface DrzewoRaportBudowniczy {
 
-	public void buildWiek();
+	public void buildWiek(int i);
 
-	public void buildWysokosc();
+	public void buildWysokosc(int i);
 
 	RaportDrzewo getRaport();
 }

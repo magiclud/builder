@@ -3,30 +3,23 @@ package drzewo;
 public class SosnaRaportBudwoniczy implements DrzewoRaportBudowniczy {
 
 	String nazwa = "Sosna";
-	int wysokosc;
-	int wiek;
 	Drzewo drzewo = new Drzewo();;
 	RaportDrzewo raport;
 	
-	public SosnaRaportBudwoniczy(Drzewo drzewo) {
-		
-		wiek = drzewo.getWiek();
-		wysokosc = drzewo.getWysokosc();
-	}
 
 	@Override
 	public RaportDrzewo getRaport(){
-		return new RaportDrzewo(wiek, wysokosc, nazwa);
+		return new RaportDrzewo(drzewo, nazwa);
 	}
 
 	@Override
-	public void buildWiek() {
+	public void buildWiek(int wiek) {
 		drzewo.setWiek(wiek);
 
 	}
 
 	@Override
-	public void buildWysokosc() {
+	public void buildWysokosc(int wysokosc) {
 		drzewo.setWysokosc(wysokosc);
 
 	}

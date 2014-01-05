@@ -7,21 +7,22 @@ public class RaportDrzewo {
 	private int wysokosc;
 
 
-	public RaportDrzewo(Drzewo wysokosc, String nazwa) {
+	public RaportDrzewo(Drzewo drzewo, String nazwa) {
 		this.nazwa = nazwa;
-		this.wiek = wysokosc.getWiek();
+		this.wiek = drzewo.getWiek();
+		this.wysokosc = drzewo.getWysokosc();
 	}
 
-	public RaportDrzewo(int wysokosc, String nazwa) {
-		this.nazwa = nazwa;
-		this.wysokosc = wysokosc;
-	}
-
-	public RaportDrzewo(int wiek, int wysokosc, String nazwa) {
-		this.nazwa = nazwa;
-		this.wiek = wiek;
-		this.wysokosc = wysokosc;
-	}
+	// public RaportDrzewo(int wysokosc, String nazwa) {
+	// this.nazwa = nazwa;
+	// this.wysokosc = wysokosc;
+	// }
+	//
+	// public RaportDrzewo(int wiek, int wysokosc, String nazwa) {
+	// this.nazwa = nazwa;
+	// this.wiek = wiek;
+	// this.wysokosc = wysokosc;
+	// }
 
 	public String getOpis() {
 		if (wiek <= 0 && wysokosc <= 0) {

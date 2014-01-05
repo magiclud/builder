@@ -8,16 +8,13 @@ public class testBudwniczySosnaRaport {
 
 	@Test
 	public void testDzilaniaBudowniczegoGdyMamWiekIWysokosc() {
-		Drzewo drzewo = new Drzewo();
-		drzewo.setWiek(111);
-		drzewo.setWysokosc(123);
 
 		// SosnaRaportBudowniczy calyRaport = new SosnaRaport(drzewo);
 		// SosnaDirector crateRaport = new SosnaDirector(calyRaport);
 		// RaportDrzewo raportSosna = crateRaport.wezRaport();
-		DrzewoRaportBudowniczy calyRaport = new SosnaRaportBudwoniczy(drzewo);
-		calyRaport.buildWiek();
-		calyRaport.buildWysokosc();
+		DrzewoRaportBudowniczy calyRaport = new SosnaRaportBudwoniczy();
+		calyRaport.buildWiek(111);
+		calyRaport.buildWysokosc(123);
 		RaportDrzewo raport = calyRaport.getRaport();
 
 		assertEquals(raport.getOpis(), "Sosna wiek 111 wysokosc 123");
@@ -25,12 +22,9 @@ public class testBudwniczySosnaRaport {
 
 	@Test
 	public void testDzilaniaBudowniczegoGdyMamWiek() {
-		Drzewo drzewo = new Drzewo();
-		drzewo.setWiek(111);
 
-		DrzewoRaportBudowniczy calyRaport = new SosnaRaportBudwoniczy(drzewo);
-		calyRaport.buildWiek();
-		calyRaport.buildWysokosc();
+		DrzewoRaportBudowniczy calyRaport = new SosnaRaportBudwoniczy();
+		calyRaport.buildWiek(111);
 		RaportDrzewo raport = calyRaport.getRaport();
 
 		assertEquals(raport.getOpis(), "Sosna wiek 111");
@@ -38,13 +32,9 @@ public class testBudwniczySosnaRaport {
 
 	@Test
 	public void testDzilaniaBudowniczegoGdyMamWysokosc() {
-		Drzewo drzewo = new Drzewo();
-		drzewo.setWysokosc(123);
-
 		// DrzewoRaportBudowniczy calyRaport = new DrzewoRaportBudowniczy();
-		DrzewoRaportBudowniczy calyRaport = new SosnaRaportBudwoniczy(drzewo);
-		calyRaport.buildWiek();
-		calyRaport.buildWysokosc();
+		DrzewoRaportBudowniczy calyRaport = new SosnaRaportBudwoniczy();
+		calyRaport.buildWysokosc(123);
 		RaportDrzewo raport = calyRaport.getRaport();
 
 		assertEquals(raport.getOpis(), "Sosna wysokosc 123");
