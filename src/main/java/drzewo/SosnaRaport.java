@@ -5,7 +5,7 @@ public class SosnaRaport implements SosnaRaportBudowniczy {
 	String nazwa = "Sosna";
 	int wysokosc;
 	int wiek;
-	Drzewo drzewo;
+	Drzewo drzewo = new Drzewo();;
 	RaportDrzewo raport;
 	
 	public SosnaRaport(Drzewo drzewo) {

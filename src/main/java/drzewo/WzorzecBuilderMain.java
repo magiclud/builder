@@ -6,6 +6,7 @@ public class WzorzecBuilderMain {
 	RaportDrzewoBuildier raport;
 
 	public WzorzecBuilderMain(DrzewoBuilder drzewo) {
+		super();
 		this.drzewo = drzewo;
 	}
 

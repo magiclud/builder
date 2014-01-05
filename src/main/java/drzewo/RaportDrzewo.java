@@ -6,6 +6,17 @@ public class RaportDrzewo {
 	private int wiek;
 	private int wysokosc;
 
+
+	public RaportDrzewo(Drzewo wysokosc, String nazwa) {
+		this.nazwa = nazwa;
+		this.wiek = wysokosc.getWiek();
+	}
+
+	public RaportDrzewo(int wysokosc, String nazwa) {
+		this.nazwa = nazwa;
+		this.wysokosc = wysokosc;
+	}
+
 	public RaportDrzewo(int wiek, int wysokosc, String nazwa) {
 		this.nazwa = nazwa;
 		this.wiek = wiek;
@@ -22,7 +33,7 @@ public class RaportDrzewo {
 		if (wysokosc <= 0) {
 			return nazwa + " wiek " + wiek;
 		}
-		return nazwa + " wiek " + wiek + " wysoskosc " + wysokosc;
+		return nazwa + " wiek " + wiek + " wysokosc " + wysokosc;
 
 	}
 
