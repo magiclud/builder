@@ -28,6 +28,9 @@ public class ReportAssembler {
 
 	private SaleEntry saleEntry;
 
+	Report report = new Report();
+	RaportBuilder raportBuilder;
+
 	/**
 	 * @param reportDate
 	 */
@@ -41,9 +44,10 @@ public class ReportAssembler {
 	 * @return
 	 */
 	public Report getReport(RaportBuilder raportBuilder) {
-		Report report = new Report();
+
 
 		raportBuilder.buildSaleEntry(saleEntry);
+
 		ReportBody reportBody = raportBuilder.getRaportBody();
 		report.setReportBody(reportBody);
 

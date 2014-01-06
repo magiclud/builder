@@ -6,31 +6,26 @@ import eu.jpereira.trainings.designpatterns.creational.builder.model.RaportBuild
 import eu.jpereira.trainings.designpatterns.creational.builder.model.ReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SaleEntry;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
-import eu.jpereira.trainings.designpatterns.creational.builder.xml.XMLReportBody;
 
 public class HTMLReportBuilder implements RaportBuilder {
 
-	ReportBody htmlRaport;
+	HTMLReportBody reportBody;
 
-	HTMLReportBuilder() {
-		htmlRaport = new HTMLReportBody();
-	}
 
 	@Override
 	public ReportBody getRaportBody() {
-		// TODO Auto-generated method stub
-		return htmlRaport;
+		return reportBody;
 	}
 
 	@Override
 	public void buildSaleEntry(SaleEntry saleEntry) {
-		XMLReportBody reportBody = new XMLReportBody();
+		reportBody = new HTMLReportBody();
 
-		reportBody.putContent("<sale><customer><name>");
+		reportBody.putContent("<span class=\"customerName\">");
 		reportBody.putContent(saleEntry.getCustomer().getName());
-		reportBody.putContent("</name><phone>");
+		reportBody.putContent("</span><span class=\"customerPhone\">");
 		reportBody.putContent(saleEntry.getCustomer().getPhone());
-		reportBody.putContent("</phone></customer>");
+		reportBody.putContent("</span>");
 
 		reportBody.putContent("<items>");
 
@@ -45,7 +40,7 @@ public class HTMLReportBuilder implements RaportBuilder {
 			reportBody.putContent(soldEntry.getUnitPrice());
 			reportBody.putContent("</price></item>");
 		}
-		reportBody.putContent("</items></sale>");
+		reportBody.putContent("</items>");
 	}
 
 }

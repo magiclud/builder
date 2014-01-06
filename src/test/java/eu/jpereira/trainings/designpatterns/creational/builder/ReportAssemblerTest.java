@@ -25,6 +25,7 @@ import eu.jpereira.trainings.designpatterns.creational.builder.model.RaportBuild
 import eu.jpereira.trainings.designpatterns.creational.builder.model.Report;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SaleEntry;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
+import eu.jpereira.trainings.designpatterns.creational.builder.xml.XMLReportBuilder;
 
 /**
  * @author jpereira
@@ -34,10 +35,9 @@ public class ReportAssemblerTest {
 	@Test
 	public void testWyowalaniaReportBody() {
 
+		RaportBuilder raportBuilder = new JSONRaportBuilder();
 		ReportAssembler assembler = new ReportAssembler();
 		assembler.setSaleEntry(createDummySaleEntry());
-		RaportBuilder raportBuilder = new JSONRaportBuilder();
-		raportBuilder.buildSaleEntry(createDummySaleEntry());
 		Report report = assembler.getReport(raportBuilder);
 		
 		String expected = "sale:{customer:{name:\"Bob\",phone:\"1232232\"},items:[{name:\"Computer\",quantity:2,price:99.9},{name:\"Printer\",quantity:1,price:79.8}]}";
@@ -48,9 +48,12 @@ public class ReportAssemblerTest {
 	public void testAssembleJSONReportBody() {
 
 		ReportAssembler assembler = new ReportAssembler();
-
 		assembler.setSaleEntry(createDummySaleEntry());
-		Report report = assembler.getReport("JSON");
+
+		// Report report = assembler.getReport("JSON");
+		RaportBuilder raportBuilder = new JSONRaportBuilder();
+		Report report = assembler.getReport(raportBuilder);
+
 		String expected = "sale:{customer:{name:\"Bob\",phone:\"1232232\"},items:[{name:\"Computer\",quantity:2,price:99.9},{name:\"Printer\",quantity:1,price:79.8}]}";
 		assertEquals(expected, report.getAsString());
 	}
@@ -59,11 +62,13 @@ public class ReportAssemblerTest {
 	public void testAssembleXMLReportBody() {
 
 		ReportAssembler assembler = new ReportAssembler();
-
 		assembler.setSaleEntry(createDummySaleEntry());
-		Report report = assembler.getReport("XML");
-		String expected = "<sale><customer><name>Bob</name><phone>1232232</phone></customer><items><item><name>Computer</name><quantity>2</quantity><price>99.9</price></item><item><name>Printer</name><quantity>1</quantity><price>79.8</price></item></items></sale>";
 
+		// Report report = assembler.getReport("XML");
+		RaportBuilder raportBuilder = new XMLReportBuilder();
+		Report report = assembler.getReport(raportBuilder);
+
+		String expected = "<sale><customer><name>Bob</name><phone>1232232</phone></customer><items><item><name>Computer</name><quantity>2</quantity><price>99.9</price></item><item><name>Printer</name><quantity>1</quantity><price>79.8</price></item></items></sale>";
 		assertEquals(expected, report.getAsString());
 
 	}
@@ -72,9 +77,12 @@ public class ReportAssemblerTest {
 	public void testAssembleHTMLReportBody() {
 
 		ReportAssembler assembler = new ReportAssembler();
-
 		assembler.setSaleEntry(createDummySaleEntry());
-		Report report = assembler.getReport("HTML");
+
+		// Report report = assembler.getReport("HTML");
+		RaportBuilder raportBuilder = new HTMLReportBuilder();
+		Report report = assembler.getReport(raportBuilder);
+
 		String expected = "<span class=\"customerName\">Bob</span><span class=\"customerPhone\">1232232</span><items><item><name>Computer</name><quantity>2</quantity><price>99.9</price></item><item><name>Printer</name><quantity>1</quantity><price>79.8</price></item></items>";
 
 		assertEquals(expected, report.getAsString());

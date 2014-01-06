@@ -9,22 +9,18 @@ import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
 
 public class JSONRaportBuilder implements RaportBuilder {
 
-	ReportBody jsonraport;
-
-	public JSONRaportBuilder() {
-		jsonraport = new JSONReportBody();
-	}
+	JSONReportBody reportBody;
 
 	@Override
 	public ReportBody getRaportBody() {
 		// TODO Auto-generated method stub
-		return jsonraport;
+		return reportBody;
 	}
 
 	@Override
 	public void buildSaleEntry(SaleEntry saleEntry) {
 		
-		JSONReportBody reportBody = new JSONReportBody();
+		reportBody = new JSONReportBody();
 		// Add customer info
 		reportBody.addContent("sale:{customer:{");
 		reportBody.addContent("name:\"");

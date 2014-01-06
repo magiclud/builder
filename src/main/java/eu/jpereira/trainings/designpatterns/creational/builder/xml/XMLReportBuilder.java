@@ -2,7 +2,6 @@ package eu.jpereira.trainings.designpatterns.creational.builder.xml;
 
 import java.util.Iterator;
 
-import eu.jpereira.trainings.designpatterns.creational.builder.HTMLReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.RaportBuilder;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.ReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SaleEntry;
@@ -10,26 +9,22 @@ import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
 
 public class XMLReportBuilder implements RaportBuilder {
 
-	ReportBody xmlRaport;
-
-	XMLReportBuilder() {
-		xmlRaport = new XMLReportBody();
-	}
+	XMLReportBody reportBody;
 
 	@Override
 	public ReportBody getRaportBody() {
-		return xmlRaport;
+		return reportBody;
 	}
 
 	@Override
 	public void buildSaleEntry(SaleEntry saleEntry) {
-		HTMLReportBody reportBody = new HTMLReportBody();
+		reportBody = new XMLReportBody();
 
-		reportBody.putContent("<span class=\"customerName\">");
+		reportBody.putContent("<sale><customer><name>");
 		reportBody.putContent(saleEntry.getCustomer().getName());
-		reportBody.putContent("</span><span class=\"customerPhone\">");
+		reportBody.putContent("</name><phone>");
 		reportBody.putContent(saleEntry.getCustomer().getPhone());
-		reportBody.putContent("</span>");
+		reportBody.putContent("</phone></customer>");
 
 		reportBody.putContent("<items>");
 
@@ -44,7 +39,7 @@ public class XMLReportBuilder implements RaportBuilder {
 			reportBody.putContent(soldEntry.getUnitPrice());
 			reportBody.putContent("</price></item>");
 		}
-		reportBody.putContent("</items>");
+		reportBody.putContent("</items></sale>");
 
 	}
 
