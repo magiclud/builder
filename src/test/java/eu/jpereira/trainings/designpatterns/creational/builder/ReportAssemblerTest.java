@@ -20,12 +20,10 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import drzewo.DrzewoRaportBudowniczy;
-import drzewo.RaportDrzewo;
-import drzewo.SosnaRaportBudwoniczy;
-import eu.jpereira.trainings.designpatterns.creational.builder.json.JSONReportBudowniczy;
+import eu.jpereira.trainings.designpatterns.creational.builder.json.JSONReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.Customer;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.Report;
+import eu.jpereira.trainings.designpatterns.creational.builder.model.ReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SaleEntry;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
 
@@ -36,16 +34,15 @@ import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
 public class ReportAssemblerTest {
 	@Test
 	public void testWyowalaniaReportBody() {
-		DrzewoRaportBudowniczy calyRaport = new SosnaRaportBudwoniczy();
-		calyRaport.buildWiek(111);
-		calyRaport.buildWysokosc(123);
-		RaportDrzewo raport = calyRaport.getRaport();
 
-		assertEquals(raport.getOpis(), "Sosna wiek 111 wysokosc 123");
-		JSONReportBudowniczy report = new ReportAssembler(null, null);
-		report.setSaleEntry(createDummySaleEntry());
-		report.addContent();
-		Report = report.getReport();
+		JSONReportBody json = new JSONReportBody();
+
+		ReportAssembler assembler = new ReportAssembler();
+		assembler.setSaleEntry(createDummySaleEntry());
+		assembler.buildJson(json);
+		ReportBody json = assembler.getReport();
+		
+		Report report = json.
 		assembler.setSaleEntry(createDummySaleEntry());
 
 
