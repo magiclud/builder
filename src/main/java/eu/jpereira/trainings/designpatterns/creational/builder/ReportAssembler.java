@@ -20,6 +20,7 @@ import java.util.Iterator;
 import eu.jpereira.trainings.designpatterns.creational.builder.json.JSONReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.json.JSONReportBudowniczy;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.Report;
+import eu.jpereira.trainings.designpatterns.creational.builder.model.ReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SaleEntry;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
 import eu.jpereira.trainings.designpatterns.creational.builder.xml.XMLReportBody;
@@ -185,7 +186,7 @@ public class ReportAssembler implements JSONReportBudowniczy {
 	}
 
 	@Override
-	public Report getReport() {
-		return report;
+	public ReportBody getReport() {
+		// return new ;
 	}
 }
