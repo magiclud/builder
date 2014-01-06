@@ -16,14 +16,13 @@
 package eu.jpereira.trainings.designpatterns.creational.builder;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import eu.jpereira.trainings.designpatterns.creational.builder.json.JSONReportBody;
+import eu.jpereira.trainings.designpatterns.creational.builder.json.JSONRaportBuilder;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.Customer;
+import eu.jpereira.trainings.designpatterns.creational.builder.model.RaportBuilder;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.Report;
-import eu.jpereira.trainings.designpatterns.creational.builder.model.ReportBody;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SaleEntry;
 import eu.jpereira.trainings.designpatterns.creational.builder.model.SoldItem;
 
@@ -35,19 +34,14 @@ public class ReportAssemblerTest {
 	@Test
 	public void testWyowalaniaReportBody() {
 
-		JSONReportBody json = new JSONReportBody();
-
 		ReportAssembler assembler = new ReportAssembler();
 		assembler.setSaleEntry(createDummySaleEntry());
-		assembler.buildJson(json);
-		ReportBody json = assembler.getReport();
+		RaportBuilder raportBuilder = new JSONRaportBuilder();
+		raportBuilder.buildSaleEntry(createDummySaleEntry());
+		Report report = assembler.getReport(raportBuilder);
 		
-		Report report = json.
-		assembler.setSaleEntry(createDummySaleEntry());
-
-
-	// ReportAssembler assembler = new ReportAssembler(reportBody);
-		assertNotNull(assembler);
+		String expected = "sale:{customer:{name:\"Bob\",phone:\"1232232\"},items:[{name:\"Computer\",quantity:2,price:99.9},{name:\"Printer\",quantity:1,price:79.8}]}";
+		assertEquals(expected, report.getAsString());
 	}
 
 	@Test
